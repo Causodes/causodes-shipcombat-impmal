@@ -34,6 +34,8 @@ The Header shows a snapshot of ship status visible to all crew: hull integrity, 
 
 Players can view and claim roles as well as view and equip various ship components on this tab. The "Ready" column on the Bridge Crew table indicates that status of the role; players who have marked their turn as "Done" will have the status update to "Yes". Once all roles are ready, the GM can advance the turn in the combat tracker.
 
+GMs can manually override the name of a role as well as change the skill associated with a given role from this tab by editing the fields under the Bridge Crew table.
+
 ---
 
 ## Configuration Tab
@@ -86,9 +88,9 @@ Only one component per equipment slot type is active at a time; switching the dr
 
 ### Ordnance Actor Templates
 
-Torpedoes and strike craft are separate **actors** (types `impmal-shipcombat.torpedo` and `impmal-shipcombat.strikeCraft`) that live outside the ship sheet. They are registered as launch templates by dragging them into the two drop targets on the Config tab:
+Torpedoes and strike craft are separate **actor** types that are initialized outside the ship sheet. They are registered as launch templates by dragging them into the two drop targets on the Config tab; once registered, the original actor can be deleted:
 
-- **Torpedo Actors** — drag one or more torpedo actors here; the Ordnance Master selects which type to arm/launch each round
+- **Torpedo Actors** — drag one or more torpedo actors here; the Ordnance Master selects which type to arm/launch each round depending on how many are equipped on the **Overview** tab.
 - **Strike Craft Actors** — drag one or more strike craft actors here; same selection logic
 
 Each template actor carries all stats for that ordnance type: speed, maneuverability, fuel, warhead damage and blast radius (torpedoes), hull, sensor rating, weapon load (strike craft). When a torpedo or flight is launched, a new token is spawned on the canvas using the template actor's stats. The original template actor is never modified during play.
@@ -201,7 +203,7 @@ Strike craft flight tokens are manually controlled. Each flight has hull, fuel, 
 
 ## NPC Ships
 
-NPC ships use a separate actor type (`impmal-shipcombat.npcShip`) with simplified GM-only controls: weapon batteries, armour, shields, hull, and condition tracking without the full player-facing station UI.
+NPC ships use a separate actor type with simplified GM-only controls: weapon batteries, armour, shields, hull, and condition tracking without the full player-facing station UI.
 
 ---
 
