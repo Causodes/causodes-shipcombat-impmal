@@ -1,0 +1,305 @@
+/* Ship Combat: responsive adjustments layered on top of the system vehicle sheet. */
+
+/* ── Tab Navigation ──────────────────────────────────────────────────────── */
+/* Target ApplicationV2 tabs which use nav.tabs > .tab element structure      */
+/* The nav is the PART element itself (direct child of .window-content),      */
+/* not wrapped in a section — so we need the > nav selector.                  */
+.application.actor.impmal.vehicle.shipcombat-ship .sheet-tabs,
+.application.actor.impmal.vehicle.shipcombat-ship nav.sheet-tabs,
+.application.actor.impmal.vehicle.shipcombat-ship .tabs,
+.application.actor.impmal.vehicle.shipcombat-ship nav[data-group="primary"],
+.application.actor.impmal.vehicle.shipcombat-ship .window-content > nav {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.25rem 0.5rem;
+  height: auto !important;
+  min-height: 0 !important;
+  position: relative !important;
+  flex-shrink: 0 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+/* Force scrollable content area below tab nav to respect wrap height */
+.application.actor.impmal.vehicle.shipcombat-ship .window-content {
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+/* Header and tab-nav parts must not flex-grow and must shrink only to their content */
+.application.actor.impmal.vehicle.shipcombat-ship .window-content > .vehicle-header,
+.application.actor.impmal.vehicle.shipcombat-ship .window-content > nav[data-group="primary"],
+.application.actor.impmal.vehicle.shipcombat-ship .window-content > nav.tabs {
+  flex: 0 0 auto !important;
+}
+/* Active tab sections fill remaining height and scroll.                     */
+/* Each tab's own CSS (or impmal.css) provides overflow-y: auto.             */
+.application.actor.impmal.vehicle.shipcombat-ship .window-content > section.tab {
+  flex: 1 1 0 !important;
+  min-height: 0 !important;
+}
+
+.application.actor.impmal.vehicle.shipcombat-ship .sheet-tabs .item,
+.application.actor.impmal.vehicle.shipcombat-ship .tabs .item,
+.application.actor.impmal.vehicle.shipcombat-ship .sheet-tabs [data-tab],
+.application.actor.impmal.vehicle.shipcombat-ship .tabs [data-tab],
+.application.actor.impmal.vehicle.shipcombat-ship nav[data-group="primary"] [data-tab],
+.application.actor.impmal.vehicle.shipcombat-ship .window-content > nav [data-tab] {
+  flex: 1 1 9rem;
+  min-width: 9rem;
+  max-width: 14rem;
+  white-space: normal;
+  text-align: center;
+  height: auto !important;
+  line-height: 1.3;
+  padding: 0.25rem 0.5rem;
+}
+
+
+/* ── Debug Condition UI (GM only, temporary) ─────────────────────────────── */
+.shipcombat-debug-conditions .list-header { background: rgba(180, 80, 0, 0.18); }
+.shipcombat-debug-cond-row {
+  display: flex; align-items: center; gap: 0.4rem; flex-wrap: nowrap; min-width: 0;
+}
+.shipcombat-debug-cond-row .list-name {
+  flex: 0 0 7rem; min-width: 0; font-size: 0.75rem; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.shipcombat-debug-tier-label {
+  flex: 1 1 0; min-width: 0; font-size: 0.7rem; color: #aaa; font-style: italic;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.shipcombat-debug-tier-btns { display: flex; gap: 2px; flex-shrink: 0; }
+.shipcombat-debug-btn {
+  padding: 1px 6px; font-size: 0.65rem; border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05); color: #ccc; cursor: pointer; border-radius: 3px;
+  line-height: 1.6; white-space: nowrap;
+}
+.shipcombat-debug-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.shipcombat-debug-btn--active { background: rgba(220,100,0,0.45); border-color: #e06020; color: #fff; font-weight: 700; }
+
+/* ── Core status badge (inline header indicator) ── */
+.shipcombat-core-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: auto;
+  margin-right: 4px;
+  flex-shrink: 0;
+  padding: 1px 7px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.shipcombat-core-badge--assigned {
+  color: #f1c40f;
+  background: rgba(241, 196, 15, 0.1);
+  border: 1px solid rgba(241, 196, 15, 0.25);
+}
+.shipcombat-core-badge--staged {
+  color: #e67e22;
+  background: rgba(230, 126, 34, 0.08);
+  border: 1px solid rgba(230, 126, 34, 0.25);
+}
+.shipcombat-core-badge--spent {
+  color: rgba(255, 255, 255, 0.3);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: line-through;
+}
+.shipcombat-core-badge--none {
+  color: rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.shipcombat-core-pulse {
+  animation: shipcombat-pulse 1.4s ease-in-out infinite;
+}
+@keyframes shipcombat-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* ── Payload status badge (inline header indicator) ── */
+.shipcombat-payload-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: auto;
+  margin-right: 4px;
+  flex-shrink: 0;
+  padding: 2px 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 3px;
+  white-space: nowrap;
+  color: #e67e22;
+  background: rgba(230, 126, 34, 0.1);
+  border: 1px solid rgba(230, 126, 34, 0.25);
+  cursor: help;
+}
+.shipcombat-payload-badge span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+/* When payload badge is present, core badge shouldn't also push left */
+.shipcombat-payload-badge + .shipcombat-core-badge {
+  margin-left: 0;
+}
+
+.shipcombat-core-quick-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 2px 5px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba(241, 196, 15, 0.15);
+  border: 1px solid rgba(241, 196, 15, 0.35);
+  border-radius: 3px;
+  color: #f1c40f;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.shipcombat-core-quick-btn:hover {
+  background: rgba(241, 196, 15, 0.3);
+}
+
+/* ── Core action played chips (displayed in banner) ── */
+.shipcombat-core-action-played-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 1px 6px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 3px;
+  white-space: nowrap;
+  color: rgba(241, 196, 15, 0.7);
+  background: rgba(241, 196, 15, 0.07);
+  border: 1px solid rgba(241, 196, 15, 0.18);
+  margin-right: 2px;
+}
+
+/* ── Captain card chat messages (reuse captain card tile styles; suppress action buttons) ── */
+/* The card itself uses .shipcombat-captain-card + .shipcombat-captain-card--{category} from captain.css  */
+.shipcombat-chat-captain-card {
+  /* No action buttons in chat  -  remove bottom border/padding that the card adds for them */
+  padding-bottom: 0.55rem;
+}
+/* Ensure the CSS custom props survive in Foundry's chat window scope */
+.shipcombat-chat-captain-card.shipcombat-captain-card--boost    { --shipcombat-card-color: #4a9eff; --shipcombat-card-rgb: 74, 158, 255; }
+.shipcombat-chat-captain-card.shipcombat-captain-card--shipwide { --shipcombat-card-color: #27ae60; --shipcombat-card-rgb: 39, 174, 96;  }
+.shipcombat-chat-captain-card.shipcombat-captain-card--reaction { --shipcombat-card-color: #9b59b6; --shipcombat-card-rgb: 155, 89, 182; }
+.shipcombat-chat-captain-card.shipcombat-captain-card--gambit   { --shipcombat-card-color: #e74c3c; --shipcombat-card-rgb: 231, 76, 60;  }
+.shipcombat-chat-captain-card.shipcombat-captain-card--unknown  { --shipcombat-card-color: #888;    --shipcombat-card-rgb: 136, 136, 136;}
+
+.shipcombat-fire-salvo-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.25rem 0;
+}
+.shipcombat-fire-tn-inline {
+  font-size: 0.72rem;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-left: auto;
+}
+.shipcombat-fire-salvo-guaranteed {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+.shipcombat-fire-salvo-rolls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding: 0.3rem;
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+.shipcombat-salvo-die {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  padding: 2px 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+/* Timed reveal: each die fades in via animation-delay set in inline style */
+.shipcombat-salvo-reveal {
+  opacity: 0;
+  animation: shipcombat-die-pop 0.25s ease-out forwards;
+}
+@keyframes shipcombat-die-pop {
+  0%   { opacity: 0; filter: blur(4px); }
+  60%  { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; filter: blur(0); }
+}
+/* Summary sections (damage, shields, crits) reveal after dice */
+.shipcombat-summary-reveal {
+  opacity: 0;
+  animation: shipcombat-summary-fade 0.35s ease-out forwards;
+}
+@keyframes shipcombat-summary-fade {
+  0%   { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.shipcombat-salvo-hit  { color: #44ff88; border-color: rgba(68,255,136,0.3); }
+.shipcombat-salvo-miss { color: #888; opacity: 0.5; }
+.shipcombat-salvo-crit { color: #ffd700; border-color: rgba(255,215,0,0.4); background: rgba(255,215,0,0.08); }
+.shipcombat-salvo-jam  { color: #e74c3c; border-color: rgba(231,76,60,0.4); background: rgba(231,76,60,0.08); }
+/* Visual separator between salvo batches */
+.shipcombat-salvo-batch-sep {
+  flex-basis: 100%;
+  height: 0;
+  margin: 1px 0;
+}
+
+.shipcombat-fire-jam {
+  text-align: center;
+  padding: 0.3rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #e74c3c;
+  background: rgba(231,76,60,0.1);
+  border: 1px solid rgba(231,76,60,0.25);
+  border-radius: 4px;
+}
+
+
+/* ── GM Debug: Force Conditions (config tab) ─────────────────────────────── */
+
+.shipcombat-debug-cond-controls {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.shipcombat-debug-cond-controls button {
+  font-size: 0.68rem;
+  padding: 2px 7px;
+  border-radius: 3px;
+  opacity: 0.75;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: opacity 0.12s, border-color 0.12s;
+}
+
+.shipcombat-debug-cond-controls button:hover {
+  opacity: 1;
+}
+
+/* Tier colour-coding */
+.shipcombat-debug-cond-controls button[data-tier="low"].active    { border-color: #f0a500; color: #f0a500; opacity: 1; }
+.shipcombat-debug-cond-controls button[data-tier="medium"].active { border-color: #e67e22; color: #e67e22; opacity: 1; }
+.shipcombat-debug-cond-controls button[data-tier="high"].active   { border-color: #e74c3c; color: #e74c3c; opacity: 1; }
+.shipcombat-debug-cond-controls button[data-tier=""].active       { opacity: 0.45; }
+

@@ -1,0 +1,170 @@
+{
+  "SHIPCOMBAT": {
+    "Term": {
+      "VoidShield": "Void Shield",
+      "DistanceUnit": "Void Unit",
+      "DistanceUnits": "Void Units",
+      "DistanceUnitAbbr": "VU",
+      "SensorRadar": "Auspex"
+    },
+    "Setting": {
+      "PowerCoresMaxHint": "How many {{SHIPCOMBAT.Term.PowerCores}} the {{SHIPCOMBAT.Role.Engineer}} starts each round with.",
+      "ContactDesignationHint": "How unidentified contacts are named on the Sensor Radar.",
+      "SweepGatedPositionsHint": "Blip positions on the Sensor Radar only update when the sweep arm passes over them, like a real phosphor radar. Positions may lag up to one full sweep rotation (~9 seconds)."
+    },
+    "Role": {
+      "Captain": "Supreme Commander",
+      "Engineer": "Enginseer",
+      "Pilot": "Helmsman",
+      "Gunner": "Gunnery Officer",
+      "Ordnance": "Ordnance Master",
+      "Sensors": "Augur"
+    },
+    "Engineer": {
+      "ManageHeat": "Rite of Cooling",
+      "ManageHeatDesc": "Spend auxiliary power and roll Engineering to perform cooling rites. Reduce heat by power spent + SL (min 1).",
+      "ShieldCommitment": "Voidshield Flux",
+      "FluxToChargeTooltip": "Spend 1 Voidshield Flux to gain 1 Auxiliary Power."
+    },
+    "Warning": {
+      "NoPowerCores": "No {{SHIPCOMBAT.Term.PowerCores}} available. The {{SHIPCOMBAT.Role.Engineer}} must have cores in reserve.",
+      "NoEngineer": "No player is assigned as {{SHIPCOMBAT.Role.Engineer}}.",
+      "OnlyComponents": "Only Ship Components may be installed on this ship.",
+      "HeatMaxed": "Ship heat is at maximum - cannot fire plasma cannon."
+    },
+    "Label": {
+      "VoidUnits": "{{SHIPCOMBAT.Term.DistanceUnits}}",
+      "Shield": "Voidshields",
+      "ArmourVoidshields": "Armour | Voidshields"
+    },
+    "Helm": {
+      "MinMoveMomentumTooltip": "Minimum move: {val} {{SHIPCOMBAT.Term.DistanceUnitAbbr}} of momentum will carry the ship forward automatically if no thrust is applied.",
+      "VelocityTooltipRelative": "Velocity: {mag} {{SHIPCOMBAT.Term.DistanceUnitAbbr}}, {dir}° relative to ship heading",
+      "VelocityTooltipTrue": "Velocity: {mag} {{SHIPCOMBAT.Term.DistanceUnitAbbr}}, {dir}° true bearing",
+      "StrafeDistance": "Distance ({{SHIPCOMBAT.Term.DistanceUnits}})",
+      "RetrogradePartial": "Reduces Forward Move to {n} {{SHIPCOMBAT.Term.DistanceUnits}}",
+      "ConfirmNote": "Ship will proceed to projected position.",
+      "PilotingSLTooltip": "Roll Piloting (Major Ship) to generate Helm SL for Speed, Maneuverability, and Evasion allocation.",
+      "SpeedTooltip": "Speed {val}: at 100% power the ship moves {val} {{SHIPCOMBAT.Term.DistanceUnits}}.",
+      "MinMoveTooltip": "Min. Move {val}: the ship must move at least this many {{SHIPCOMBAT.Term.DistanceUnits}} (half last turn's movement, rounded up). Drifts in the bearing direction."
+    },
+    "NpcShip": {
+      "FuelMax": "Fuel / Range ({{SHIPCOMBAT.Term.DistanceUnitAbbr}})",
+      "VoidshieldFlux": "Voidshield Flux",
+      "NoFluxRemaining": "No voidshield flux remaining."
+    },
+    "Ordnance": {
+      "RecallCraftDesc": "Immediately recover one friendly strike craft within 3 {{SHIPCOMBAT.Term.DistanceUnits}}. Cannot be cancelled."
+    },
+    "Captain": {
+      "StatusTitle": "Command Bridge",
+      "Stance": {
+        "aggressive": "Aggressive Doctrine",
+        "devastation": "Devastation Protocol"
+      },
+      "Card": {
+        "aggressiveDoctrine": "Aggressive Doctrine",
+        "devastationProtocol": "Devastation Protocol",
+        "Desc": {
+          "overdriveCommand": "Grant every role an additional {{SHIPCOMBAT.Term.PowerCore}}. The {{SHIPCOMBAT.Role.Engineer}} may take an additional action this round.",
+          "doubleShift": "Grant the {{SHIPCOMBAT.Role.Engineer}} an additional action this round.",
+          "hardenShields": "This round, weapons with the Shield Bypass trait cannot bypass the ship's void shields.",
+          "devastationProtocol": "Sets stance to Devastation Protocol: all outgoing and incoming hits are automatic critical hits.",
+          "enhancedSensor": "Grant the {{SHIPCOMBAT.Role.Sensors}} an additional {{SHIPCOMBAT.Term.PowerCore}}."
+        },
+        "enhancedSensor": "Enhanced Sensor"
+      },
+      "Core": {
+        "BCPrompt": "Choose an enemy to designate as the priority target. All weapons fired at this target gain +10 accuracy, 2 armour penetration, and 2 void shield burn this round.",
+        "BattleClarity": {
+          "desc": "Nominate one enemy token. All weapons striking that target gain +10 accuracy and pierce 2 void shields this round."
+        }
+      }
+    },
+    "Dialog": {
+      "EndCombatBody": "Are you sure you want to end the ship combat? All round state will be preserved in the combat log.",
+      "OverdriveTitle": "Full Plasma Burn",
+      "OverdriveBody": "Redline the plasma manifolds to surge the ship well beyond rated speed, adding 100% to the power bar for this helm activation. Consumes one {{SHIPCOMBAT.Term.PowerCore}}. Proceed?",
+      "FlipAndBurnBody": "Fire the attitude thrusters to flip the ship 180°, then burn — the ship decelerates along its original trajectory at 50% speed, moving sternward. Consumes one {{SHIPCOMBAT.Term.PowerCore}}. Proceed?",
+      "RamSelectTarget": "Select a target to ram. The ship will arc along the projected course."
+    },
+    "Action": {
+      "CaptainOvercharged": "Doctrine Shift",
+      "SensorsStandard": "Passive Augury",
+      "PilotStandardDesc": "Move the ship at its base Speed along current heading.",
+      "PilotStrafeDesc": "Activate lateral attitude thrusters to translate the ship sideways without changing heading. Useful for repositioning against a target without exposing the flanks.",
+      "PilotRetrogradeDesc": "Fire the bow thrusters in opposition to forward momentum. Each unit of thrust reduces the minimum-move obligation by one {{SHIPCOMBAT.Term.DistanceUnit}}; thrust in excess of the obligation propels the ship sternward.",
+      "PilotOverdrive": "Full Plasma Burn",
+      "PilotOverdriveDesc": "Redline the plasma manifolds, flooding the drive chambers with raw reactor output to surge the ship well beyond its rated speed ceiling. Adds 100% to the power bar for this helm activation.",
+      "PilotFlipAndBurnDesc": "Fire the attitude thrusters hard over to spin the ship 180°, then ignite the plasma drives — the ship decelerates along its original trajectory, moving forward at half-speed. Requires and consumes 50% power. Consumes one {{SHIPCOMBAT.Term.PowerCore}}."
+    },
+    "Sensors": {
+      "VoidshieldAllocation": "Voidshield Allocation",
+      "StatusTitle": "Sensor Station",
+      "FocusedScanDesc": "Free action (once per turn). Roll Sensor; gain Sensor base rate + positive SL as Power.",
+      "BreachAnalysisDesc": "Upgrade to Lock 2. Reveals voidshield percentages per sector on the target.",
+      "DeepScanDesc": "Upgrade to Lock 3. Reveals armour, voidshield values, hull, and weapon fire arcs per sector. Shows actual ship name.",
+      "SensorRadar": "Sensor Radar",
+      "AbilitiesReference": "Sensor Radar Abilities",
+      "DesignateTorpedoDesc": "Lock the {{SHIPCOMBAT.Role.Sensors}}'s targeting onto a hostile torpedo to prevent it from being helmed for 1 round. Alternatively, designate a friendly torpedo to double its speed (movement range) this turn.",
+      "RangeAmplifierDesc": "Overclock the sensor lattice: auto-scan range is doubled for 2 rounds."
+    },
+    "Slot": {
+      "Shields": "Voidshields",
+      "Sensor": "Sensor"
+    },
+    "Hint": {
+      "DropComponent": "Drop a Ship Component here"
+    },
+    "Payload": {
+      "SensorBuoyDesc": "Reduces all {{SHIPCOMBAT.Role.Sensors}} action AP costs by 20% this round. The discounted cost rounds up to the nearest whole AP.",
+      "CogitatorDataSlate": "Cogitator Data-Slate"
+    },
+    "BDA": {
+      "Pending": "Awaiting Battle Damage Assessment from {{SHIPCOMBAT.Role.Sensors}}",
+      "PendingSubtitle": "{{SHIPCOMBAT.Role.Sensors}} Assessment Pending"
+    },
+    "Crit": {
+      "SensorBlindRadar": "Sensor offline",
+      "Effect": {
+        "weaponsSensors": {
+          "medium": "One weapon section disabled; sensor offline (lock upgrades blocked).",
+          "high": "All weapons: −20 to hit; one weapon section disabled; sensor offline."
+        }
+      }
+    },
+    "Sheet": {
+      "Component": "Ship Component Sheet"
+    },
+    "MainSkill": {
+      "MajorShip": "Major Ship"
+    },
+    "WeaponCategory": {
+      "Macrocannon": "Macrocannon",
+      "Lance": "Lance Battery"
+    },
+    "Trait": {
+      "ShieldBypassDesc": "Hits bypass void shields entirely - hull damage is applied directly without shield absorption.",
+      "ShieldBurnDesc": "Each hit absorbed by shields drains this many additional void flux on top of the standard 1.",
+      "RendDesc": "Each hit that gets through void shields permanently reduces sector armour by this value - even if armour absorbs all resulting hull damage. The armour reduction still occurs regardless of whether hull damage is dealt."
+    },
+    "Component": {
+      "ShieldValues": "{{SHIPCOMBAT.Term.VoidShield}} Zones",
+      "EngineStats": "Plasma Drive",
+      "SensorStats": "Sensor Array",
+      "MaxVoidFlux": "Max Void Flux",
+      "SensorRating": "Sensor Rating"
+    },
+    "Gunner": {
+      "Core": {
+        "ExtendRange": {
+          "desc": "Double the sensor band size for your next weapon attack, increasing its effective engagement range."
+        }
+      }
+    }
+  },
+  "TYPES.Actor.causodes-shipcombat-impmal.ship": "Player Ship",
+  "TYPES.Actor.causodes-shipcombat-impmal.npcShip": "Non-Player Ship",
+  "TYPES.Actor.causodes-shipcombat-impmal.shipOrdnance": "Ship Ordnance",
+  "TYPES.Item.causodes-shipcombat-impmal.component": "Ship Component"
+}
