@@ -210,6 +210,13 @@
   opacity: 0.5;
   margin-left: auto;
 }
+.shipcombat-fire-hitmod {
+  font-size: 0.7rem;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.6;
+  margin-left: 0.2rem;
+}
 .shipcombat-fire-salvo-guaranteed {
   font-size: 0.7rem;
   opacity: 0.6;
@@ -257,6 +264,7 @@
 .shipcombat-salvo-miss { color: #888; opacity: 0.5; }
 .shipcombat-salvo-crit { color: #ffd700; border-color: rgba(255,215,0,0.4); background: rgba(255,215,0,0.08); }
 .shipcombat-salvo-jam  { color: #e74c3c; border-color: rgba(231,76,60,0.4); background: rgba(231,76,60,0.08); }
+.shipcombat-salvo-crit-fail { color: #cc0000; border-color: rgba(204,0,0,0.45); background: rgba(204,0,0,0.12); }
 /* Visual separator between salvo batches */
 .shipcombat-salvo-batch-sep {
   flex-basis: 100%;
@@ -302,4 +310,17 @@
 .shipcombat-debug-cond-controls button[data-tier="medium"].active { border-color: #e67e22; color: #e67e22; opacity: 1; }
 .shipcombat-debug-cond-controls button[data-tier="high"].active   { border-color: #e74c3c; color: #e74c3c; opacity: 1; }
 .shipcombat-debug-cond-controls button[data-tier=""].active       { opacity: 0.45; }
+/* ── Bridge Crew: left-align role column ─────────────────────────────────── */
+.shipcombat-crew-col-role {
+  text-align: left;
+}
+/* ── Bridge Crew header: restore grid layout ────────────────────────────── */
+/* core/custom-class-compat.css applies display:flex to .list-header; override  */
+/* with higher specificity to keep the crew columns grid-aligned with the rows. */
+.shipcombat-ship .sheet-list .list-header.shipcombat-crew-header {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr) 3.5rem minmax(0, 2fr);
+  height: auto;
+  line-height: normal;
+}
 

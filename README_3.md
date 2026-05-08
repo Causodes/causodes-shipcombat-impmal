@@ -6,8 +6,6 @@
 | Engineer | Tech (Engineering) | Reactor Status + Navigation Bridge |
 | Gunnery Officer | Ranged (Ordnance) | Gunnery Deck + Ordnance Deck |
 
-> **Merged stations:** At three players, the Augur station merges into the Supreme Commander tab, the Helmsman station merges into the Engineer tab (using Engineering skill for helm), and the Ordnance Master station merges into the Gunnery Officer tab.
-
 ---
 
 ## Supreme Commander

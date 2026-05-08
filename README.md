@@ -1,5 +1,7 @@
 # Causodes's Ship Combat (Imperium Maledictum)
 
+![](https://github.com/user-attachments/assets/142cc3a1-8108-491d-b387-a0e8a7023e2c)
+
 A FoundryVTT module for **Imperium Maledictum** that adds a full ship combat system. Up to six players each claim a named bridge station and execute their role's mechanics from a dedicated tab on the shared ship sheet. The crew size is adjustable; roles collapse and merge as headcount drops. All players take their turns simultaneously on the player ship's turn in the combat tracker.
 
 See the role-specific reference documents for full details on what each station does:
@@ -77,10 +79,10 @@ All ship stats other than hull max are derived from installed **Ship Component**
 
 | Slot | Drives |
 |------|--------|
-| Voidshields | Max void flux, shield strength per core, sector zone thresholds |
+| Voidshields | Max void flux, shield strength per core, sector zone thresholds, Flux to AP ratio |
 | Armour | Armour value per sector (Bow, Stern, Port, Starboard) |
 | Engine | Base speed, base maneuverability, Auxiliary Power conversion rate |
-| Sensor Array | Rating (accuracy), band size (accuracy decay), auto-scan range, max detection range |
+| Sensor Array | Rating (accuracy), band size (accuracy decay), auto-scan range, max detection range, AP cost ratio |
 | Reactor Core | Core output, heat capacity, Auxiliary Power capacity, Auxiliary Power generated per core dispatched |
 | Ordnance Bay | Torpedo salvo size, strike craft flight size, available payload count, manpower |
 
@@ -142,7 +144,7 @@ The **Ram Target** button (both modes) becomes active when at least one visible 
 
 The angle of incoming damage is calculated and assigned to the appropriate sector that is hit (Bow, Stern, Port, Starboard). 
 
-For every point of active void shield, 1 incoming hit is fully nullified, regardless of damage. Void shields can be overcharged above the sector's maximum; however, any void shields over the maximum are lost at the start of the following turn.
+For every point of active void shield, 1 incoming hit is fully nullified, regardless of damage. Void shields can be **overcharged** above the sector's maximum; however, any void shields over the maximum are lost at the start of the following turn.
 
 Armour negates 1 point of damage per point of armour. 
 
@@ -213,4 +215,4 @@ NPC ships use a separate actor type with simplified GM-only controls: weapon bat
 |---------|-------------|
 | Contact Designation | Label style for unidentified Sensor blips: Greek letters, numeric, or naval callsigns |
 | Sweep-Gated Radar Positions | Blip positions only update when the radar sweep arm passes over them |
-| Flavor Pack | Role name and UI label convention: Warhammer 40k, Naval, or Military |
+| Movement Mode | Simplified fixed-radius arcs or Realistic Newtonian vector physics |
