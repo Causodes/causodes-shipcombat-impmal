@@ -106,7 +106,7 @@ Cards fall into four categories:
 ---
 
 ## Engineer
-*Skills: Tech (Engineering) — also handles Helm*
+*Skills: Tech (Engineering)*
 
 The Engineer manages the reactor, distributes **Power Cores**, manages heat and internal fire, and controls ship movement. Helm allocation uses the Engineering skill.
 
@@ -160,7 +160,7 @@ Click the **Ram** button in the Helm Control panel (greyed out if no valid targe
 ---
 
 ## Gunnery Officer
-*Skill: Ranged (Ordnance) — also handles Ordnance Master duties*
+*Skill: Ranged (Ordnance)*
 
 The Gunnery Officer fires the ship's weapon batteries and manages crew logistics and ordnance deployment. Hostiles can only be targeted and damage can only be assessed with the assistance of the Supreme Commander.
 

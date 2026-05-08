@@ -64,4 +64,20 @@ Hooks.once("init", () => {
   //     "modules/<this-module>/templates/partials/captain-conditions.hbs",
   //   );
   // Must happen during this "init" hook; core compiles partials in "setup".
+
+  // ── AutoAnimations v14 compatibility ─────────────────────────────────────
+  // ImpMal v14 moved the skill key from dialogData.context.skill (v13) to
+  // dialogData.data.skill. AutoAnimations' ImpMal hook still reads
+  // msg.system.context.skill and crashes with "Cannot read properties of
+  // undefined (reading 'includes')" when it is absent.
+  // Backfill context.skill from data.skill before the message is persisted.
+  Hooks.on("preCreateChatMessage", (doc, _data, _options, _userId) => {
+    const cls = doc.system?.class;
+    if (!cls || cls === "WeaponTest") return;    // weapons are handled separately by AA
+    if (doc.system.context?.skill) return;       // already present, nothing to do
+    const skillKey = doc.system.data?.skill;
+    if (skillKey) {
+      doc.updateSource({ "system.context.skill": skillKey });
+    }
+  });
 });

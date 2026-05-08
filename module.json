@@ -2,58 +2,86 @@
   "id": "causodes-shipcombat-impmal",
   "title": "Causodes's Ship Combat (Imperium Maledictum)",
   "description": "Imperium Maledictum integration for Causodes's Ship Combat (Core). Registers actor/item types, the system adapter, and CSS theming.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "compatibility": {
-    "minimum": 13,
-    "verified": 13,
-    "maximum": 13
+    "minimum": "13",
+    "verified": "13",
+    "maximum": "13"
   },
   "authors": [
     {
-      "name": "Causodes"
+      "name": "Causodes",
+      "flags": {}
     }
   ],
   "relationships": {
     "systems": [
       {
         "id": "impmal",
-        "type": "system"
+        "type": "system",
+        "compatibility": {}
       }
     ],
-    "required": [
+    "requires": [
       {
         "id": "causodes-shipcombat-core",
-        "type": "module"
+        "type": "module",
+        "manifest": "https://github.com/Causodes/causodes-shipcombat-core/releases/latest/download/module.json"
       },
       {
         "id": "warhammer-lib",
-        "type": "module"
+        "type": "module",
+        "manifest": "https://github.com/moo-man/WarhammerLibrary-FVTT/releases/latest/download/module.json"
       }
     ]
   },
   "esmodules": [
     "causodes-shipcombat-impmal.js"
   ],
-  "scripts": [],
   "styles": [
-    "styles/shared.css",
-    "styles/header.css",
-    "styles/overview.css",
-    "styles/pilot.css",
-    "styles/engineer.css",
-    "styles/gunner.css",
-    "styles/sensors.css",
-    "styles/chat.css",
-    "styles/npc.css",
-    "styles/torpedo.css",
-    "styles/ordnance.css",
-    "styles/captain.css"
+    {
+      "src": "styles/shared.css"
+    },
+    {
+      "src": "styles/header.css"
+    },
+    {
+      "src": "styles/overview.css"
+    },
+    {
+      "src": "styles/pilot.css"
+    },
+    {
+      "src": "styles/engineer.css"
+    },
+    {
+      "src": "styles/gunner.css"
+    },
+    {
+      "src": "styles/sensors.css"
+    },
+    {
+      "src": "styles/chat.css"
+    },
+    {
+      "src": "styles/npc.css"
+    },
+    {
+      "src": "styles/torpedo.css"
+    },
+    {
+      "src": "styles/ordnance.css"
+    },
+    {
+      "src": "styles/captain.css"
+    }
   ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "lang/en.json",
+      "flags": {}
     }
   ],
   "documentTypes": {
@@ -68,7 +96,17 @@
   },
   "flags": {
     "hotReload": {
-      "extensions": ["css", "hbs", "json"]
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ]
     }
-  }
+  },
+  "url": "https://github.com/Causodes/causodes-shipcombat-impmal",
+  "download": "https://github.com/Causodes/causodes-shipcombat-impmal/archive/refs/tags/v1.0.0.zip",
+  "manifest": "https://github.com/Causodes/causodes-shipcombat-impmal/releases/latest/download/module.json",
+  "readme": "https://github.com/Causodes/causodes-shipcombat-impmal/blob/main/README.md",
+  "changelog": "https://github.com/Causodes/causodes-shipcombat-impmal/blob/main/CHANGELOG.md",
+  "allowBugReporter": true
 }
