@@ -213,4 +213,4 @@ NPC ships use a separate actor type with simplified GM-only controls: weapon bat
 |---------|-------------|
 | Contact Designation | Label style for unidentified Sensor blips: Greek letters, numeric, or naval callsigns |
 | Sweep-Gated Radar Positions | Blip positions only update when the radar sweep arm passes over them |
-| Flavor Pack | Role name and UI label convention: Warhammer 40k, Naval, or Military |
+| Movement Mode | Simplified fixed-radius arcs or Realistic Newtonian vector physics |

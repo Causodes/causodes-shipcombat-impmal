@@ -445,23 +445,28 @@
   cursor: not-allowed;
 }
 
-/* Roll Piloting button */
+/* Roll Piloting button — teal accent to match ship combat UI */
 .shipcombat-roll-piloting-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.85rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
   font-weight: 600;
   border-radius: 3px;
   cursor: pointer;
-  background: var(--color-dark-5, #262626);
-  border: 1px solid var(--color-border-light);
-  color: inherit;
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.35);
+  color: #ddd;
   white-space: nowrap;
 }
+.shipcombat-roll-piloting-btn i {
+  color: #00ff88;
+  font-size: 0.8rem;
+}
 .shipcombat-roll-piloting-btn:hover:not([disabled]) {
-  background: var(--color-dark-6, #333);
+  background: rgba(0, 255, 136, 0.18);
+  border-color: rgba(0, 255, 136, 0.6);
 }
 .shipcombat-roll-piloting-btn[disabled] {
   opacity: 0.5;

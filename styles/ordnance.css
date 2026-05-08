@@ -204,12 +204,11 @@
 }
 .shipcombat-ordnance-action-btn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 2px;
-  padding: 6px 4px;
-  font-size: 0.68rem;
+  gap: 5px;
+  padding: 3px 6px;
+  font-size: 0.68rem !important;
   border: 1px solid rgba(0, 255, 136, 0.3);
   border-radius: 4px;
   background: rgba(0, 255, 136, 0.08);
@@ -218,13 +217,31 @@
   transition: background 0.15s, border-color 0.15s;
   text-align: center;
   overflow: hidden;
-  min-height: 54px;
+  min-height: 0;
+}
+.shipcombat-ordnance-action-btn i {
+  flex: 0 0 auto;
+  font-size: 0.68rem;
+  color: #00ff88;
+  line-height: 1;
+}
+.shipcombat-ordnance-action-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  overflow: hidden;
 }
 .shipcombat-ordnance-action-btn span {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
+  line-height: 1.2;
+}
+.shipcombat-ordnance-action-btn small {
+  font-size: 0.6rem !important;
+  opacity: 0.7;
+  white-space: nowrap;
 }
 .shipcombat-ordnance-action-btn:hover:not([disabled]) {
   background: rgba(0, 255, 136, 0.2);
@@ -233,14 +250,6 @@
 .shipcombat-ordnance-action-btn[disabled] {
   opacity: 0.4;
   cursor: not-allowed;
-}
-.shipcombat-ordnance-action-btn i {
-  font-size: 1.1rem;
-  color: #00ff88;
-}
-.shipcombat-ordnance-action-btn small {
-  font-size: 0.6rem;
-  opacity: 0.7;
 }
 .shipcombat-action-spent {
   font-size: 0.7rem;
