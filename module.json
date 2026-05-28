@@ -2,10 +2,10 @@
   "id": "causodes-shipcombat-impmal",
   "title": "Causodes's Ship Combat (Imperium Maledictum)",
   "description": "Imperium Maledictum integration for Causodes's Ship Combat (Core). Registers actor/item types, the system adapter, and CSS theming.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "compatibility": {
     "minimum": "14",
-    "verified": "14",
+    "verified": "14.361",
     "maximum": "14"
   },
   "authors": [
@@ -86,7 +86,7 @@
     }
   },
   "url": "https://github.com/Causodes/causodes-shipcombat-impmal",
-  "download": "https://github.com/Causodes/causodes-shipcombat-impmal/archive/refs/tags/v2.0.0.zip",
+  "download": "https://github.com/Causodes/causodes-shipcombat-impmal/archive/refs/tags/v2.1.0.zip",
   "manifest": "https://github.com/Causodes/causodes-shipcombat-impmal/releases/latest/download/module.json",
   "readme": "https://github.com/Causodes/causodes-shipcombat-impmal/blob/main/README.md",
   "changelog": "https://github.com/Causodes/causodes-shipcombat-impmal/blob/main/CHANGELOG.md",

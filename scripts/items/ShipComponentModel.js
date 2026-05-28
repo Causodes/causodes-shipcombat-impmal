@@ -1,3 +1,3 @@
-import { ShipComponentSchemaMixin } from "../../../causodes-shipcombat-core/scripts/items/ShipComponentSchema.js";
+const { ShipComponentSchemaMixin } = globalThis.ShipCombat._api;
 
 export class ShipComponentModel extends ShipComponentSchemaMixin(warhammer.models.BaseWarhammerItemModel) {}

@@ -1,5 +1,4 @@
-import { ShipSheetMixin } from "../../../../causodes-shipcombat-core/scripts/actors/ship/ShipSheetMixin.js";
-import { hullDisplay } from "../../../../causodes-shipcombat-core/scripts/constants.js";
+const { ShipSheetMixin, hullDisplay } = globalThis.ShipCombat._api;
 
 export class ShipSheet extends ShipSheetMixin(IMActorSheet) {
   static DEFAULT_OPTIONS = {

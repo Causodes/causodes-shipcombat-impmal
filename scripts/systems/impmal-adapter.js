@@ -7,12 +7,12 @@
  *   - crewActor.setupSkillTest({ key, name }, { modifier }) (skill test API)
  *   - game.impmal.config.availability (config lookups)
  *
- * SystemAdapter and MODULE_ID live in the sibling causodes-shipcombat-core
- * module; the relative import path goes up to modules/ and back down.
+ * Core APIs (SystemAdapter, etc.) are accessed via globalThis.ShipCombat._api
+ * rather than ES imports, avoiding the Forge CDN URL mismatch that causes
  */
 
-import { SystemAdapter } from "../../../causodes-shipcombat-core/scripts/systems/SystemAdapter.js";
-import { MODULE_ID } from "../../../causodes-shipcombat-core/scripts/constants.js";
+const { SystemAdapter } = globalThis.ShipCombat._api;
+const MODULE_ID = "causodes-shipcombat-impmal";
 
 // Specialisation list, lazily loaded from the impmal-core compendium.
 let _allSpecsCache = null;

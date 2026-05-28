@@ -1,4 +1,4 @@
-import { OrdnanceSchemaMixin } from "../../../../causodes-shipcombat-core/scripts/actors/ordnance/OrdnanceSchema.js";
+const { OrdnanceSchemaMixin } = globalThis.ShipCombat._api;
 
 export class ShipOrdnanceModel extends OrdnanceSchemaMixin(warhammer.models.BaseWarhammerActorModel) {
   static defineSchema() {

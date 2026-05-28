@@ -1,4 +1,4 @@
-import { NpcShipSchemaMixin } from "../../../../causodes-shipcombat-core/scripts/actors/npc/NpcShipSchema.js";
+const { NpcShipSchemaMixin } = globalThis.ShipCombat._api;
 
 export class NpcShipModel extends NpcShipSchemaMixin(warhammer.models.BaseWarhammerActorModel) {
   static defineSchema() {

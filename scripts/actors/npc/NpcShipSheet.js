@@ -1,4 +1,4 @@
-import { NpcShipSheetMixin } from "../../../../causodes-shipcombat-core/scripts/actors/npc/NpcShipSheetMixin.js";
+const { NpcShipSheetMixin } = globalThis.ShipCombat._api;
 
 export class NpcShipSheet extends NpcShipSheetMixin(IMActorSheet) {
   static DEFAULT_OPTIONS = {

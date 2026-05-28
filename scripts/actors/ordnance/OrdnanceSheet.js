@@ -1,3 +1,3 @@
-import { OrdnanceSheetMixin } from "../../../../causodes-shipcombat-core/scripts/actors/ordnance/OrdnanceSheetMixin.js";
+const { OrdnanceSheetMixin } = globalThis.ShipCombat._api;
 
 export class OrdnanceSheet extends OrdnanceSheetMixin(IMActorSheet) {}
