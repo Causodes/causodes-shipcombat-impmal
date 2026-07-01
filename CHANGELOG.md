@@ -1,3 +1,6 @@
+## v2.1.1
+- Fix NPC Overview tab showing duplicate stats and armour (header already contains these)
+
 ## v2.1.0
 - Fix Forge compatibility: access core APIs via globalThis.ShipCombat._api instead of relative ES imports
 
