@@ -153,7 +153,8 @@
       "EngineStats": "Plasma Drive",
       "SensorStats": "Sensor Array",
       "MaxVoidFlux": "Max Void Flux",
-      "SensorRating": "Sensor Rating"
+      "SensorRating": "Sensor Rating",
+      "ShieldStrengthPerCore": "Void Flux per Core"
     },
     "Gunner": {
       "Core": {

@@ -10,7 +10,6 @@
  */
 
 import { ImpmalAdapter } from "./scripts/systems/impmal-adapter.js";
-import { MODULE_ID } from "../causodes-shipcombat-core/scripts/constants.js";
 import { ShipModel } from "./scripts/actors/ship/ShipModel.js";
 import { ShipSheet } from "./scripts/actors/ship/ShipSheet.js";
 import { NpcShipModel } from "./scripts/actors/npc/NpcShipModel.js";
@@ -24,8 +23,10 @@ import { ShipComponentSheet } from "./scripts/items/ShipComponentSheet.js";
 // causodes-shipcombat-core loads before this module (it is listed as a required
 // dependency) and sets globalThis.ShipCombat during its own module evaluation.
 
+const MODULE_ID = "causodes-shipcombat-impmal";
+
 ShipCombat.configure({
-  moduleId: "causodes-shipcombat-impmal",
+  moduleId: MODULE_ID,
   adapter:  new ImpmalAdapter(),
 });
 
