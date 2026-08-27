@@ -23,13 +23,13 @@ Roll Presence (Leadership) once per round. Allocate the SL to:
 
 | Track | Effect per SL |
 |-------|--------------|
-| Resolve | +1 damage control action this round |
-| Efficiency | –1 crew cost per ordnance action (minimum 2) |
-| Expedience | –1 round duration per ordnance action (minimum 1) |
+| Inspire | +1 to next round's starting hand limit |
+| Resolve | +1 mulligan this round |
+| Initiative | +1 to next round's combat-tracker initiative |
 
 ### Damage Control
 
-Each repair action steps one ship condition down one tier, costing 10% of maximum Auxiliary Power. Base allotment is 2 per round plus Resolve SL.
+Each repair action steps one ship condition down one tier, costing 10% of maximum Auxiliary Power. The allotment is always 2 per round.
 
 ### Void Shield Management
 
@@ -81,7 +81,11 @@ After the Gunnery Officer fires, the Supreme Commander may perform one BDA corre
 
 ### Standing Orders Deck
 
-18-card deck shuffled at the start of combat. Draw 3 cards per round. Hand cap is 6. One free redraw per round (swap one card for a fresh draw). Spending two repair actions unlocks a full mulligan.
+The 18-card deck is shuffled at combat start. The base starting hand limit is 3. At the start of each round, unplayed orders are retained up to the new limit and enough orders are drawn to refill the hand. Inspire raises the *next* round's limit by 1 per SL; without renewed Inspire, excess orders are discarded when the following round returns to the base limit. Playing an order removes that slot for the rest of the current round.
+
+The Supreme Commander has 1 mulligan each round, plus 1 per SL allocated to Resolve. A mulligan discards one selected order and immediately draws a replacement into the same slot; the same slot can be mulliganed repeatedly while uses remain. The first mulligan locks command allocation for the round. The header projects this lifecycle as `(current cards/current limit) → (next cards/next limit)`.
+
+If a non-empty draw pile contains too few orders to refill the hand, it is exhausted and that round begins below the limit. If a round would draw zero because the draw pile starts empty, the entire discard pile is shuffled into the draw pile before drawing normally.
 
 Cards fall into four categories:
 
@@ -94,12 +98,12 @@ Cards fall into four categories:
 
 | Action | Effect |
 |--------|--------|
-| Battle Clarity | All weapons targeting a nominated enemy gain +10 accuracy and pierce 2 void shields this round |
+| Priority Target | All weapons targeting a nominated enemy gain +10 accuracy and pierce 2 void shields this round |
 | Emergency Protocols | Discard entire hand; clear all Low-tier ship conditions |
 | Iron Command | Discard entire hand; step every Medium and High condition down one tier |
-| Emergency Salvage | Retrieve any one order from the discard pile into hand |
+| Emergency Salvage | Preview and recover a discarded order above the hand limit with the Salvaged tag; recycle every other discard into the draw pile; route the Salvaged order to the bottom of the draw pile when it leaves hand |
 | Command Override | Immediately promote a queued pending stance into the active stance |
-| Dead Reckoning | View and reorder the top 12 cards in the draw pile; blocks the mulligan this round |
+| Dead Reckoning | Reorder the top 12 draw-pile orders |
 
 ---
 
@@ -114,7 +118,7 @@ Allocate available void flux across the four sectors (Bow, Stern, Port, Starboar
 
 ### Core Distribution
 
-Stage cores individually against each role (including the core bank for Auxiliary Power conversion the following round), then dispatch them all at once. Receiving roles spend their core to unlock their Power Core action. Surplus cores convert to AP at end of round.
+Stage cores individually for crew stations, void shields, or Auxiliary Power conversion, then dispatch them all at once. A station Core joins the receiving operator's shared pool and can unlock that operator's Power Core actions. Cores committed to Auxiliary Power convert at the start of the next round.
 
 *Overclock*: roll Engineering, gain +1 heat; on success gain one bonus Power Core for this round.
 

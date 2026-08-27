@@ -22,7 +22,7 @@
     },
     "Engineer": {
       "ManageHeat": "Rite of Cooling",
-      "ManageHeatDesc": "Spend auxiliary power and roll Engineering to perform cooling rites. Reduce heat by power spent + SL (min 1).",
+      "ManageHeatDesc": "Spend auxiliary power and roll Engineering to perform cooling rites. Reduce heat by power spent + {{SHIPCOMBAT.Term.AllocationUnits}} (min 1).",
       "ShieldCommitment": "Voidshield Flux",
       "FluxToChargeTooltip": "Spend 1 Voidshield Flux to gain 1 Auxiliary Power."
     },
@@ -44,7 +44,7 @@
       "StrafeDistance": "Distance ({{SHIPCOMBAT.Term.DistanceUnits}})",
       "RetrogradePartial": "Reduces Forward Move to {n} {{SHIPCOMBAT.Term.DistanceUnits}}",
       "ConfirmNote": "Ship will proceed to projected position.",
-      "PilotingSLTooltip": "Roll Piloting (Major Ship) to generate Helm SL for Speed, Maneuverability, and Evasion allocation.",
+      "PilotingSLTooltip": "Roll Piloting (Major Ship) to generate Helm {{SHIPCOMBAT.Term.AllocationUnits}} for Speed, Maneuverability, and Evasion allocation.",
       "SpeedTooltip": "Speed {val}: at 100% power the ship moves {val} {{SHIPCOMBAT.Term.DistanceUnits}}.",
       "MinMoveTooltip": "Min. Move {val}: the ship must move at least this many {{SHIPCOMBAT.Term.DistanceUnits}} (half last turn's movement, rounded up). Drifts in the bearing direction."
     },
@@ -75,9 +75,9 @@
         "enhancedSensor": "Enhanced Sensor"
       },
       "Core": {
-        "BCPrompt": "Choose an enemy to designate as the priority target. All weapons fired at this target gain +10 accuracy, 2 armour penetration, and 2 void shield burn this round.",
+        "BCPrompt": "Choose an enemy to designate as the priority target. All weapons fired at this target gain {{SHIPCOMBAT.ModifierCopy.HitBonus}} accuracy, 2 armour penetration, and 2 void shield burn this round.",
         "BattleClarity": {
-          "desc": "Nominate one enemy token. All weapons striking that target gain +10 accuracy and pierce 2 void shields this round."
+          "desc": "Nominate one enemy token. All weapons striking that target gain {{SHIPCOMBAT.ModifierCopy.HitBonus}} accuracy and pierce 2 void shields this round."
         }
       }
     },
@@ -101,7 +101,7 @@
     "Sensors": {
       "VoidshieldAllocation": "Voidshield Allocation",
       "StatusTitle": "Sensor Station",
-      "FocusedScanDesc": "Free action (once per turn). Roll Sensor; gain Sensor base rate + positive SL as Power.",
+      "FocusedScanDesc": "Free action (once per turn). Roll Sensor; gain Sensor base rate + positive {{SHIPCOMBAT.Term.AllocationUnits}} as Power.",
       "BreachAnalysisDesc": "Upgrade to Lock 2. Reveals voidshield percentages per sector on the target.",
       "DeepScanDesc": "Upgrade to Lock 3. Reveals armour, voidshield values, hull, and weapon fire arcs per sector. Shows actual ship name.",
       "SensorRadar": "Sensor Radar",
@@ -129,7 +129,7 @@
       "Effect": {
         "weaponsSensors": {
           "medium": "One weapon section disabled; sensor offline (lock upgrades blocked).",
-          "high": "All weapons: −20 to hit; one weapon section disabled; sensor offline."
+          "high": "All weapons: {{SHIPCOMBAT.ModifierCopy.DoubleModifierPenalty}} to hit; one weapon section disabled; sensor offline."
         }
       }
     },

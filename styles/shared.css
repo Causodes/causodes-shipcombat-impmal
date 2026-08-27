@@ -183,19 +183,7 @@
   margin-right: 2px;
 }
 
-/* ── Captain card chat messages (reuse captain card tile styles; suppress action buttons) ── */
-/* The card itself uses .shipcombat-captain-card + .shipcombat-captain-card--{category} from captain.css  */
-.shipcombat-chat-captain-card {
-  /* No action buttons in chat  -  remove bottom border/padding that the card adds for them */
-  padding-bottom: 0.55rem;
-}
-/* Ensure the CSS custom props survive in Foundry's chat window scope */
-.shipcombat-chat-captain-card.shipcombat-captain-card--boost    { --shipcombat-card-color: #4a9eff; --shipcombat-card-rgb: 74, 158, 255; }
-.shipcombat-chat-captain-card.shipcombat-captain-card--shipwide { --shipcombat-card-color: #27ae60; --shipcombat-card-rgb: 39, 174, 96;  }
-.shipcombat-chat-captain-card.shipcombat-captain-card--reaction { --shipcombat-card-color: #9b59b6; --shipcombat-card-rgb: 155, 89, 182; }
-.shipcombat-chat-captain-card.shipcombat-captain-card--gambit   { --shipcombat-card-color: #e74c3c; --shipcombat-card-rgb: 231, 76, 60;  }
-.shipcombat-chat-captain-card.shipcombat-captain-card--unknown  { --shipcombat-card-color: #888;    --shipcombat-card-rgb: 136, 136, 136;}
-
+/* Captain chat cards inherit Core's universal .shipcombat-captain-card theme. */
 .shipcombat-fire-salvo-summary {
   display: flex;
   align-items: center;
@@ -323,4 +311,3 @@
   height: auto;
   line-height: normal;
 }
-

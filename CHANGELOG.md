@@ -1,3 +1,10 @@
+## v2.2.0
+- Update crew-layout guides for shared receiving-operator Power Core pools and separate shield/Auxiliary Power commitments
+- Update initiative guidance for Core's next-round reversible combat-tracker bonus
+- Route Imperium Maledictum allocation descriptions through Core's shared singular/plural allocation terminology
+- Inherit Captain-card category colours from Core's universal card contract instead of duplicating chat-only theme declarations
+- Resolve shared accuracy descriptions from adapter values and include percentile units in weapon and strike-craft chat summaries
+
 ## v2.1.2
 - Fix module not loading on Forge-hosted instances (remove last cross-module ES import of core from the entry script)
 - Explicitly classify buttons as type `button` in handlebars templates to prevent unintended form submission behavior

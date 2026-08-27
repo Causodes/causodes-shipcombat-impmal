@@ -264,6 +264,11 @@ export class ImpmalAdapter extends SystemAdapter {
   /** IM accuracy is expressed as a percentile target number. */
   formatTargetNumber(target) { return `${target}%`; }
 
+  /** Include the percentile unit in weapon and strike-craft chat summaries. */
+  formatChatAccuracyDisplay(effectiveAccuracy, _targetAC) {
+    return effectiveAccuracy === null ? null : `${effectiveAccuracy}%`;
+  }
+
   /** IM uses a roll-under system: roll ≤ target → hit. */
   isHit(roll, target) { return (roll?.total ?? 0) <= target; }
 
