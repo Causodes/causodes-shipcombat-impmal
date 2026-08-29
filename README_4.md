@@ -1,5 +1,20 @@
 # Four-Player Crew Reference
 
+**Guides**
+
+[![Docs: Main Guide](https://img.shields.io/badge/Docs-Main_Guide-57606a?style=flat-square)](README.md)
+[![Crew Guide: 3 Players](https://img.shields.io/badge/Crew_Guide-3_Players-0969da?style=flat-square)](README_3.md)
+[![Crew Guide: 4 Players](https://img.shields.io/badge/Crew_Guide-4_Players-1f883d?style=flat-square)](README_4.md)
+[![Crew Guide: 5 Players](https://img.shields.io/badge/Crew_Guide-5_Players-b35900?style=flat-square)](README_5.md)
+[![Crew Guide: 6 Players](https://img.shields.io/badge/Crew_Guide-6_Players-c21f39?style=flat-square)](README_6.md)
+
+**Stations**
+
+[![Station: Supreme Commander](https://img.shields.io/badge/Station-Supreme_Commander-8250df?style=flat-square)](#supreme-commander)
+[![Station: Engineer](https://img.shields.io/badge/Station-Engineer-1f883d?style=flat-square)](#engineer)
+[![Station: Helmsman](https://img.shields.io/badge/Station-Helmsman-b35900?style=flat-square)](#helmsman)
+[![Station: Gunnery Officer](https://img.shields.io/badge/Station-Gunnery_Officer-c21f39?style=flat-square)](#gunnery-officer)
+
 | Role | Player Skill | Station |
 |------|-------------|---------|
 | Supreme Commander | Presence (Leadership) | Command Bridge |

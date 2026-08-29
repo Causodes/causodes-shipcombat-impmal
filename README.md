@@ -1,15 +1,32 @@
 # Causodes's Ship Combat (Imperium Maledictum)
 
+[![Latest Release](https://img.shields.io/github/v/release/Causodes/causodes-shipcombat-impmal?label=Release&color=2ea44f)](https://github.com/Causodes/causodes-shipcombat-impmal/releases/latest)
+[![Foundry VTT](https://img.shields.io/badge/Foundry_VTT-14-d35400)](https://foundryvtt.com/)
+[![Issues](https://img.shields.io/github/issues/Causodes/causodes-shipcombat-impmal?label=Issues&color=d29922)](https://github.com/Causodes/causodes-shipcombat-impmal/issues)
+[![Total Downloads](https://img.shields.io/github/downloads/Causodes/causodes-shipcombat-impmal/total?label=Downloads&color=0969da)](https://github.com/Causodes/causodes-shipcombat-impmal/releases)
+[![License](https://img.shields.io/github/license/Causodes/causodes-shipcombat-impmal?label=License&color=57606a)](LICENSE)
+
 ![](https://github.com/user-attachments/assets/142cc3a1-8108-491d-b387-a0e8a7023e2c)
 
 A FoundryVTT module for **Imperium Maledictum** that adds a full ship combat system. Up to six players each claim a named bridge station and execute their role's mechanics from a dedicated tab on the shared ship sheet. The crew size is adjustable; roles collapse and merge as headcount drops. All players take their turns simultaneously on the player ship's turn in the combat tracker.
 
-See the role-specific reference documents for full details on what each station does:
+**Quick navigation**
 
-- [README_3.md](README_3.md) — 3-player crew
-- [README_4.md](README_4.md) — 4-player crew
-- [README_5.md](README_5.md) — 5-player crew
-- [README_6.md](README_6.md) — 6-player crew
+[![Docs: Dependencies](https://img.shields.io/badge/Docs-Dependencies-0969da?style=flat-square)](#dependencies)
+[![Docs: Ship Sheet](https://img.shields.io/badge/Docs-Ship_Sheet-8250df?style=flat-square)](#the-ship-sheet)
+[![Docs: Configuration](https://img.shields.io/badge/Docs-Configuration-1f883d?style=flat-square)](#configuration-tab)
+[![Docs: Movement](https://img.shields.io/badge/Docs-Movement-b35900?style=flat-square)](#movement)
+[![Docs: Defences](https://img.shields.io/badge/Docs-Defences-bf3989?style=flat-square)](#void-shields-and-armour)
+[![Docs: Critical Hits](https://img.shields.io/badge/Docs-Critical_Hits-c21f39?style=flat-square)](#critical-hits)
+[![Docs: Ordnance](https://img.shields.io/badge/Docs-Ordnance-0550ae?style=flat-square)](#ordnance)
+[![Docs: NPC Ships](https://img.shields.io/badge/Docs-NPC_Ships-57606a?style=flat-square)](#npc-ships)
+
+**Guides**
+
+[![Crew Guide: 3 Players](https://img.shields.io/badge/Crew_Guide-3_Players-0969da?style=flat-square)](README_3.md)
+[![Crew Guide: 4 Players](https://img.shields.io/badge/Crew_Guide-4_Players-1f883d?style=flat-square)](README_4.md)
+[![Crew Guide: 5 Players](https://img.shields.io/badge/Crew_Guide-5_Players-b35900?style=flat-square)](README_5.md)
+[![Crew Guide: 6 Players](https://img.shields.io/badge/Crew_Guide-6_Players-c21f39?style=flat-square)](README_6.md)
 
 ---
 
