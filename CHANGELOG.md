@@ -1,3 +1,8 @@
+## v2.2.1
+- Restore the IMPMAL notes schema required when opening NPC ship sheets
+- Normalize malformed fractional NPC stats while retaining integer schema validation
+- Bump verified version to 14.367
+
 ## v2.2.0
 - Update crew-layout guides for shared receiving-operator Power Core pools and separate shield/Auxiliary Power commitments
 - Update initiative guidance for Core's next-round reversible combat-tracker bonus

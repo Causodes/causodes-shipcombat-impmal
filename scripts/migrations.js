@@ -25,6 +25,53 @@ const NEW_MODULE  = "causodes-shipcombat-impmal";
 
 const ACTOR_TYPES = ["ship", "npcShip", "torpedo", "strikeCraft"];
 const ITEM_TYPES  = ["component"];
+const NPC_INTEGER_PATHS = [
+  "hull.value",
+  "hull.max",
+  "internalFire",
+  "voidshieldFlux",
+  "movement.speed",
+  "movement.maneuverability",
+  "movement.baseSpeed",
+  "movement.baseManeuverability",
+  "attributes.piloting",
+  "attributes.tech",
+  "attributes.gunnery",
+  "autoScanRange",
+  "sensorBandSize",
+  "sensorRating",
+  ...["bow", "stern", "port", "starboard"].flatMap(sector => [
+    `armour.${sector}`,
+    `armourBase.${sector}`,
+    `shieldMax.${sector}`,
+  ]),
+];
+
+function _getProperty(object, path) {
+  return path.split(".").reduce((value, key) => value?.[key], object);
+}
+
+/** Repair fractional values written before the NPC integer schema was enforced. */
+export async function migrateNpcIntegerFields() {
+  if (!game.user.isGM) return 0;
+  let count = 0;
+  for (const actor of game.actors) {
+    if ((actor._source?.type ?? actor.type) !== `${NEW_MODULE}.npcShip`) continue;
+    const source = actor._source?.system ?? actor.system;
+    const updates = {};
+    for (const path of NPC_INTEGER_PATHS) {
+      const value = Number(_getProperty(source, path));
+      if (Number.isFinite(value) && !Number.isInteger(value)) {
+        updates[`system.${path}`] = Math.round(value);
+      }
+    }
+    if (!Object.keys(updates).length) continue;
+    await actor.update(updates);
+    console.log(`${NEW_MODULE} | Normalized integer NPC stats for "${actor.name}".`);
+    count++;
+  }
+  return count;
+}
 
 /**
  * Migrate all world actors whose type is prefixed with the old module ID.

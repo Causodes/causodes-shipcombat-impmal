@@ -18,6 +18,7 @@ import { ShipOrdnanceModel } from "./scripts/actors/ordnance/ShipOrdnanceModel.j
 import { OrdnanceSheet } from "./scripts/actors/ordnance/OrdnanceSheet.js";
 import { ShipComponentModel } from "./scripts/items/ShipComponentModel.js";
 import { ShipComponentSheet } from "./scripts/items/ShipComponentSheet.js";
+import { migrateNpcIntegerFields } from "./scripts/migrations.js";
 
 // ── Activate the ship combat engine ──────────────────────────────────────────
 // causodes-shipcombat-core loads before this module (it is listed as a required
@@ -81,4 +82,8 @@ Hooks.once("init", () => {
       doc.updateSource({ "system.context.skill": skillKey });
     }
   });
+});
+
+Hooks.once("ready", async () => {
+  await migrateNpcIntegerFields();
 });

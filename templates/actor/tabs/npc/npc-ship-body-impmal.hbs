@@ -37,7 +37,7 @@
               {{#each sectors}}
               <div class="shipcombat-ssl-row">
                 <span class="shipcombat-ssl-label">{{label}}</span>
-                <input type="number" name="system.shieldMax.{{id}}" value="{{shieldMax}}" min="0" class="shipcombat-ssl-max shipcombat-npc-shield-max-input">
+                <input type="number" name="system.shieldMax.{{id}}" value="{{shieldMax}}" min="0" step="1" class="shipcombat-ssl-max shipcombat-npc-shield-max-input">
               </div>
               {{/each}}
             </div>
@@ -85,7 +85,7 @@
               <div class="shipcombat-ssl-head">{{localize "SHIPCOMBAT.NpcShip.VoidshieldFlux"}}</div>
               <div class="shipcombat-arc-hint-row">
                 <span class="shipcombat-arc-hint-key">{{localize "SHIPCOMBAT.NpcShip.FluxMax"}}</span>
-                <input type="number" name="system.voidshieldFlux" value="{{sys.voidshieldFlux}}" min="0" class="shipcombat-npc-flux-config-input">
+                <input type="number" name="system.voidshieldFlux" value="{{sys.voidshieldFlux}}" min="0" step="1" class="shipcombat-npc-flux-config-input">
               </div>
             </div>
 
