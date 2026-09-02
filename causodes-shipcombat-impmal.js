@@ -9,20 +9,47 @@
  * socket setup, animations – is owned and registered by the core engine.
  */
 
-import { ImpmalAdapter } from "./scripts/systems/impmal-adapter.js";
-import { ShipModel } from "./scripts/actors/ship/ShipModel.js";
-import { ShipSheet } from "./scripts/actors/ship/ShipSheet.js";
-import { NpcShipModel } from "./scripts/actors/npc/NpcShipModel.js";
-import { NpcShipSheet } from "./scripts/actors/npc/NpcShipSheet.js";
-import { ShipOrdnanceModel } from "./scripts/actors/ordnance/ShipOrdnanceModel.js";
-import { OrdnanceSheet } from "./scripts/actors/ordnance/OrdnanceSheet.js";
-import { ShipComponentModel } from "./scripts/items/ShipComponentModel.js";
-import { ShipComponentSheet } from "./scripts/items/ShipComponentSheet.js";
-import { migrateNpcIntegerFields } from "./scripts/migrations.js";
+const ShipCombat = await new Promise((resolve, reject) => {
+  if (globalThis.ShipCombat?._api) {
+    resolve(globalThis.ShipCombat);
+    return;
+  }
+
+  const timeout = setTimeout(() => {
+    reject(new Error("causodes-shipcombat-impmal | Core API did not become available during module startup."));
+  }, 10_000);
+  Hooks.once("shipCombatApiReady", api => {
+    clearTimeout(timeout);
+    resolve(api);
+  });
+});
+
+const [
+  { ImpmalAdapter },
+  { ShipModel },
+  { ShipSheet },
+  { NpcShipModel },
+  { NpcShipSheet },
+  { ShipOrdnanceModel },
+  { OrdnanceSheet },
+  { ShipComponentModel },
+  { ShipComponentSheet },
+  { migrateNpcIntegerFields },
+] = await Promise.all([
+  import("./scripts/systems/impmal-adapter.js"),
+  import("./scripts/actors/ship/ShipModel.js"),
+  import("./scripts/actors/ship/ShipSheet.js"),
+  import("./scripts/actors/npc/NpcShipModel.js"),
+  import("./scripts/actors/npc/NpcShipSheet.js"),
+  import("./scripts/actors/ordnance/ShipOrdnanceModel.js"),
+  import("./scripts/actors/ordnance/OrdnanceSheet.js"),
+  import("./scripts/items/ShipComponentModel.js"),
+  import("./scripts/items/ShipComponentSheet.js"),
+  import("./scripts/migrations.js"),
+]);
 
 // ── Activate the ship combat engine ──────────────────────────────────────────
-// causodes-shipcombat-core loads before this module (it is listed as a required
-// dependency) and sets globalThis.ShipCombat during its own module evaluation.
+// The imports above wait for causodes-shipcombat-core to publish its API.
 
 const MODULE_ID = "causodes-shipcombat-impmal";
 

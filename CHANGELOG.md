@@ -1,3 +1,6 @@
+## v2.2.2
+- Wait for the Core API before evaluating ImpMal models and adapters, preventing startup races that leave module document subtypes unregistered
+
 ## v2.2.1
 - Restore the IMPMAL notes schema required when opening NPC ship sheets
 - Normalize malformed fractional NPC stats while retaining integer schema validation
