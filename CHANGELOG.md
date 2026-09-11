@@ -1,3 +1,7 @@
+## v2.2.3
+- Require Core 2.5.1 for corrected player and NPC ordnance lifecycle behavior
+- Publish an allowlisted runtime-only module archive without repository development files
+
 ## v2.2.2
 - Wait for the Core API before evaluating ImpMal models and adapters, preventing startup races that leave module document subtypes unregistered
 
