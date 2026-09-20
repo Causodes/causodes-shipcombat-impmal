@@ -1,3 +1,8 @@
+## v2.2.4
+- Resolve shared role, resource, modifier, and ordnance terminology instead of displaying raw localization tokens
+- Restore bridge-crew assignment through warhammer-lib's AppV2 actor-drop callback
+- Roll player and NPC ship initiative from the combat tracker through Core's shared adapter-aware handler
+
 ## v2.2.3
 - Require Core 2.5.1 for corrected player and NPC ordnance lifecycle behavior
 - Publish an allowlisted runtime-only module archive without repository development files
